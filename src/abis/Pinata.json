@@ -1,0 +1,11 @@
+{
+    "name": "<occasion name>",
+    "description": "<occasion description (e.g., concert, play, etc.)>",
+    "image": "https://gateway.pinata.cloud/ipfs/QmfR4HZFtkpHCtGRvLGENLddAZohKp64hK2hoDGkF4qi2z",
+    "cost": "1",
+    "maxTickets": "35",
+    "date": "<date of the occasion>",
+    "time": "<time of the occasion>",
+    "location": "<location of the occasion>"
+  }
+  
