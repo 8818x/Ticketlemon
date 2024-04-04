@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import '../index.css'
 import logo from '../lemon.png'
 import { ethers } from 'ethers'
 import Button from 'react-bootstrap/Button'

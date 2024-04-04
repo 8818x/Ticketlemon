@@ -21,7 +21,7 @@ export default function SearchBox() {
                     aria-label='Search'
                     aria-describedby="button-search">
                 </FormControl>
-                <Button variant='outline-dark' style={{ backgroundColor: '#F9F871', color: '#985D93', borderColor: 'white' }}type='submit' id='button-search' className="btn-hv">
+                <Button variant='outline-dark' style={{ backgroundColor: '#F9F871', color: '#985D93', borderColor: 'white' }}type='submit' id='button-search'>
                     <i className="fas fa-search"></i>
                 </Button>
             </InputGroup>

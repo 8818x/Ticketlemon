@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 
-import Show from '../components/Show'
-import SeatChart from '../components/SeatChart'
+import Product from '../components/Product'
 
 import Ticketlemon from '../abis/Ticketlemon.json'
-
+import SeatChart from '../components/SeatChart'
 import config from '../config.json'
+import { Helmet } from 'react-helmet-async'
 
-function Home() {
+function HomeScreen() {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
 
@@ -47,32 +47,28 @@ function Home() {
     useEffect(() => {
         loadBlockchainData()
     }, [])
-    return (
-        <div className='card-container'>
-            {occasions.map((occasion, index) => (
-                <Show
-                    occasion={occasion}
-                    id={index + 1}
-                    lemon={lemon}
-                    provider={provider}
-                    account={account}
-                    toggle={toggle}
-                    setToggle={setToggle}
-                    setOccasion={setOccasion}
-                    key={index}
-                />
-            ))}
-            {toggle && (
-                <SeatChart
-                    occasion={occasion}
-                    lemon={lemon}
-                    provider={provider}
-                    setToggle={setToggle}
-                />
-            )}
-        </div>
 
+    return (
+        <div>
+            <Helmet>
+                <title>Ticketlemon</title>
+            </Helmet>
+            <div className='card-container'>
+                {occasions.map((occasion, index) => (
+                    <Product
+                        occasion={occasion}
+                        id={index + 1}
+                        lemon={lemon}
+                        provider={provider}
+                        account={account}
+                        setOccasion={setOccasion}
+                        key={index}
+                    />
+                ))}
+                
+            </div>
+        </div>
     )
 }
 
-export default Home;
+export default HomeScreen;

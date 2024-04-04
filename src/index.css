@@ -79,21 +79,16 @@ nav ul li a {
   box-shadow: 0 2px 4px #f9f871;
 }
 
-.card-image-top {
-  max-width: 50%;
-  margin: auto; /* Center the image horizontally */
-}
-
-.card-container {
-  display: flex; /* เปลี่ยนเป็น flex สำหรับ layout แบบ row */
-  flex-wrap: wrap; /* ห่อการ์ดไปยังบรรทัดถัดไปหากจำเป็น */
-  justify-content: space-between; /* กระจายการ์ดให้เท่ากัน */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding: 20px;
-  grid-gap: 10px;
 }
 
 .card {
@@ -103,13 +98,13 @@ nav ul li a {
   padding: 20px;
   text-align: center;
   align-items: center;
-  margin: 5px;
-  width: 500px;
+  margin: 0 auto;
+  flex: 0 auto;
+  height: 300px;
 }
 
 .card img {
-  width: 50%;
-  height: auto;
+  height: 400px;
 }
 
 .card h2 {
@@ -122,17 +117,11 @@ nav ul li a {
   margin-top: 10px;
 }
 
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .occasion {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
-
+  z-index: 2;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -144,12 +133,9 @@ body {
   gap: 5px;
   grid-template-columns: repeat(25, 1fr);
 
-  background: linear-gradient(
-    to bottom,
-    var(--clr-light-blue),
-    var(--clr-white) 75%
-  );
-  border: 1px solid var(--clr-grey);
+  background: var(--clr-light-blue);
+  border: 0px;
+  border-radius: 6px;
 
   width: 90%;
   max-width: 1500px;
@@ -181,8 +167,8 @@ body {
   width: 35px;
   height: 35px;
 
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid var(--clr-grey);
+  background: var(--clr-dark-blue);
+  border: 0px;
   border-radius: 6px;
 
   cursor: pointer;
@@ -191,8 +177,7 @@ body {
 }
 
 .occasion__close:hover {
-  background: rgba(255, 255, 255, 1);
-  border: 1px solid var(--clr-white);
+  background: var(--clr-grey);
 }
 
 .occasion__close img {
@@ -216,17 +201,15 @@ body {
   grid-row: 2;
 
   height: 150px;
-
-  border: 1px solid black;
-  border-radius: 0 0 24px 24px;
+  border-radius: 6px;
 }
 
 .occasion__spacer--1,
 .occasion__spacer--2 {
   min-width: 30px;
   margin: 0 5px;
-  border: 1px solid black;
   writing-mode: vertical-lr;
+  border-radius: 6px;
 }
 
 .occasion__spacer--1 {
@@ -250,8 +233,8 @@ body {
 
   width: 50px;
   height: 50px;
-  border: 1px solid black;
-  border-radius: 0%;
+  border: 0px;
+  border-radius: 6px;
 
   font-size: 1.2em;
   font-weight: 500;
@@ -282,3 +265,55 @@ body {
   --clr-dark-blue: #f9f871;
   --clr-light-blue: #67deeb;
 }
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+  /* Adjust styles for tablets and desktops */
+  .container {
+    width: 80%; /* Adjust container width */
+    
+  }
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: auto;
+    padding: 60px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  /* Adjust styles for larger desktops */
+  .container {
+    width: 70%; /* Adjust container width */
+  }
+ 
+}
+
+/* Styles for mobile devices */
+@media screen and (max-width: 480px) {
+  .header {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* CSS for SelectedProduct Component */
+
+.product-container {
+  padding: 50px;
+  display: flex;
+}
+
+.selected-product {
+  align-items: center;
+}
+
+.product-image {
+  width: 400px;
+  height: auto;
+}
+
+.product-details {
+  padding: 20px;
+  margin: 50px;
+}
+
