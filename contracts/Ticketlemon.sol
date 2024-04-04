@@ -19,6 +19,7 @@ contract Ticketlemon is ERC721URIStorage {
         string date;
         string time;
         string location;
+        string image;
         string ipfsURI;
     }
 
@@ -46,7 +47,9 @@ contract Ticketlemon is ERC721URIStorage {
         string memory _date,
         string memory _time,
         string memory _location,
+        string memory _image,
         string memory _ipfsURI
+        
     ) public onlyOwner {
         totalOccasions++;
         occasions[totalOccasions] = Occasion(
@@ -58,7 +61,9 @@ contract Ticketlemon is ERC721URIStorage {
             _date,
             _time,
             _location,
+            _image,
             _ipfsURI
+            
         );
     }
 

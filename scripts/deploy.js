@@ -4,8 +4,6 @@ const tokens = (n) => {
     return ethers.utils.parseUnits(n.toString(), 'ether')
 }
 
-const TokenURI = "https://gateway.pinata.cloud/ipfs/QmNmwN2iMWSDTXZWjGzGYdXSx3tWoP2QHENUk5zUHmVXJZ"
-
 async function main() {
     // Setup accounts & variables
     const [deployer] = await ethers.getSigners()
@@ -24,55 +22,51 @@ async function main() {
             "name": "Spirited Away",
             "cost": tokens(3),
             "tickets": 0,
-            "date": "October 26",
+            "date": "October 26, 2024",
             "time": "3PM JST",
             "location": "Ghibli Museum, Mitaka, Tokyo, Japan",
-            "TokenURI": TokenURI
+            "image": "https://gateway.pinata.cloud/ipfs/QmRdqxSoof5PYe8cirBGrYVAGqcUFWu7py66gFxMi7iFJ7",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/1.json"
         },
         {
             "name": "The Shawshank Redemption",
             "cost": tokens(2),
             "tickets": 50,
-            "date": "March 10",
+            "date": "March 10, 2024",
             "time": "10PM PST",
             "location": "AMC DINE-IN Dolby Atmos at Universal CityWalk Hollywood, CA",
-            "TokenURI": TokenURI
+            "image": "https://gateway.pinata.cloud/ipfs/QmThRneGxXsQHzw2i4whMc17knuw5fTN2BsYUSgxEbdzVh",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/2.json"
         },
         {
             "name": "The Godfather",
             "cost": tokens(3),
-            "tickets": 20,
-            "date": "April 15",
+            "tickets": 80,
+            "date": "April 15, 2024",
             "time": "7PM CET",
             "location": "Kino International, Berlin, Germany",
-            "TokenURI": TokenURI
+            "image": "https://gateway.pinata.cloud/ipfs/QmY2dHcefBss32vre7zhARb5aTbmoRZws5j17zUFG1Cf9W",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/3.json"
         },
         {
-            "name": "The Dark Knight",
-            "cost": tokens(1),
-            "tickets": 150,
-            "date": "June 1",
-            "time": "12PM AEST",
-            "location": "Melbourne Central, VIC, Australia",
-            "TokenURI": TokenURI
-        },
-        {
-            "name": "Pulp Fiction",
+            "name": "PQueen Extravaganza",
             "cost": tokens(2),
             "tickets": 75,
-            "date": "July 20",
-            "time": "5PM BST",
-            "location": "The Prince Charles Cinema, London, UK",
-            "TokenURI": TokenURI
+            "date": "May 10, 2024",
+            "time": "9PM PST",
+            "location": "Madison Square Garden, New York, USA",
+            "image": "https://gateway.pinata.cloud/ipfs/QmRfmHsir19x1FnwiHJJoNnTv9LHgCvm8cfRhH5eCAAWAp",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/4.json"
         },
         {
-            "name": "Parasite",
-            "cost": tokens(1),
-            "tickets": 80,
-            "date": "August 12",
-            "time": "9PM KST",
-            "location": "CGV Yongsan I'Park Mall, Seoul, South Korea",
-            "TokenURI": TokenURI
+            "name": "Moonlit Serenade Under the Stars",
+            "cost": tokens(3),
+            "tickets": 150,
+            "date": "April 15, 2024",
+            "time": "7PM CET",
+            "location": "Kino International, Berlin, Germany",
+            "image": "https://gateway.pinata.cloud/ipfs/QmbbdchoJksmwMSDeXkC5LKHt3Va58eTAhfQVbeagCkNTA",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/5.json"
         }
     ]
 
@@ -85,7 +79,8 @@ async function main() {
             occasions[i].date,
             occasions[i].time,
             occasions[i].location,
-            occasions[i].TokenURI
+            occasions[i].image,
+            occasions[i].ipfsuri
         )
 
         await transaction.wait()

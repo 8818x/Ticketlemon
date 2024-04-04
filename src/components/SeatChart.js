@@ -32,7 +32,7 @@ const SeatChart = ({ occasion, lemon, provider, setToggle }) => {
   return (
     <div className="occasion">
       <div className="occasion__seating">
-        <h1>{occasion.name} Seating Map</h1>
+        <h1>{occasion.name}</h1>
 
         <button onClick={() => setToggle(false)} className="occasion__close">
           <img src={close} alt="Close" />

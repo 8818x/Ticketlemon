@@ -335,6 +335,11 @@
 					},
 					{
 						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
 						"name": "ipfsURI",
 						"type": "string"
 					}
@@ -444,6 +449,11 @@
 			{
 				"internalType": "string",
 				"name": "_location",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
 				"type": "string"
 			},
 			{

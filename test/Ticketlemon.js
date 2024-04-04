@@ -10,7 +10,9 @@ const OCCASION_MAX_TICKETS = 100
 const OCCASION_DATE = "Apr 27"
 const OCCASION_TIME = "10:00AM CST"
 const OCCASION_LOCATION = "Austin, Texas"
+const OCCASION_IMAGE = "www.google.com"
 const OCCASION_IPFS_URI = "www.google.com"
+
 
 
 describe("Ticketlemon", () => {
@@ -32,7 +34,8 @@ describe("Ticketlemon", () => {
       OCCASION_DATE,
       OCCASION_TIME,
       OCCASION_LOCATION,
-      OCCASION_IPFS_URI
+      OCCASION_IMAGE,
+      OCCASION_IPFS_URI,
     )
 
     await transaction.wait()
@@ -62,6 +65,7 @@ describe("Ticketlemon", () => {
       expect(occasion.date).to.be.equal(OCCASION_DATE)
       expect(occasion.time).to.be.equal(OCCASION_TIME)
       expect(occasion.location).to.be.equal(OCCASION_LOCATION)
+      expect(occasion.ipfsURI).to.be.equal(OCCASION_IMAGE)
       expect(occasion.ipfsURI).to.be.equal(OCCASION_IPFS_URI)
     })
 
