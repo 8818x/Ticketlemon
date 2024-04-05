@@ -85,7 +85,7 @@ function ListScreen() {
                                 <td>
                                     {/* Button to link to purchase ID */}
                                     <Link to={`/receipt/${purchase._id}`}>
-                                        <Button variant="primary">View Purchase</Button>
+                                        <Button variant="primary">View Ticket</Button>
                                     </Link>
                                 </td>
                             </tr>

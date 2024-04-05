@@ -21,22 +21,22 @@ async function main() {
         {
             "name": "Spirited Away",
             "cost": tokens(3),
-            "tickets": 0,
+            "tickets": 60,
             "date": "October 26, 2024",
             "time": "3PM JST",
             "location": "Ghibli Museum, Mitaka, Tokyo, Japan",
-            "image": "https://gateway.pinata.cloud/ipfs/QmRdqxSoof5PYe8cirBGrYVAGqcUFWu7py66gFxMi7iFJ7",
-            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/1.json"
+            "image": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmXSXQC1BT9GS2WEbGEt54NpAerXbKTmVivm1kRtysq64S/1.jpg",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmVLcVKRvvDbp5UeDg7G1SShFBKbSyyDdkjR3PajPgvZxa/1.json"
         },
         {
             "name": "The Shawshank Redemption",
             "cost": tokens(2),
-            "tickets": 50,
+            "tickets": 0,
             "date": "March 10, 2024",
             "time": "10PM PST",
             "location": "AMC DINE-IN Dolby Atmos at Universal CityWalk Hollywood, CA",
             "image": "https://gateway.pinata.cloud/ipfs/QmThRneGxXsQHzw2i4whMc17knuw5fTN2BsYUSgxEbdzVh",
-            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/2.json"
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmVLcVKRvvDbp5UeDg7G1SShFBKbSyyDdkjR3PajPgvZxa/2.json"
         },
         {
             "name": "The Godfather",
@@ -45,28 +45,28 @@ async function main() {
             "date": "April 15, 2024",
             "time": "7PM CET",
             "location": "Kino International, Berlin, Germany",
-            "image": "https://gateway.pinata.cloud/ipfs/QmY2dHcefBss32vre7zhARb5aTbmoRZws5j17zUFG1Cf9W",
-            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/3.json"
+            "image": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmXSXQC1BT9GS2WEbGEt54NpAerXbKTmVivm1kRtysq64S/3.jpg",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmVLcVKRvvDbp5UeDg7G1SShFBKbSyyDdkjR3PajPgvZxa/3.json"
         },
         {
-            "name": "PQueen Extravaganza",
+            "name": "WONDERFUL NIGHT KENNY G",
             "cost": tokens(2),
             "tickets": 75,
-            "date": "May 10, 2024",
-            "time": "9PM PST",
-            "location": "Madison Square Garden, New York, USA",
-            "image": "https://gateway.pinata.cloud/ipfs/QmRfmHsir19x1FnwiHJJoNnTv9LHgCvm8cfRhH5eCAAWAp",
-            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/4.json"
+            "date": "May 7, 2025",
+            "time": "9PM GMT+7",
+            "location": "True Arena, Hua Hin, Thailand",
+            "image": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmXSXQC1BT9GS2WEbGEt54NpAerXbKTmVivm1kRtysq64S/4.png",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmVLcVKRvvDbp5UeDg7G1SShFBKbSyyDdkjR3PajPgvZxa/4.json"
         },
         {
-            "name": "Moonlit Serenade Under the Stars",
-            "cost": tokens(3),
+            "name": "King of Rock n' Roll: ELVIS PRESLEY",
+            "cost": tokens(1),
             "tickets": 150,
-            "date": "April 15, 2024",
-            "time": "7PM CET",
-            "location": "Kino International, Berlin, Germany",
-            "image": "https://gateway.pinata.cloud/ipfs/QmbbdchoJksmwMSDeXkC5LKHt3Va58eTAhfQVbeagCkNTA",
-            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmajLNNTp9izpf3KJuv9MHr4im9A34mLiRoyu9VjWaGaHb/5.json"
+            "date": "January 21, 2025",
+            "time": "8 PM GMT+7",
+            "location": "SALA CHALOEMKRUNG, BKK, Thailand",
+            "image": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmXSXQC1BT9GS2WEbGEt54NpAerXbKTmVivm1kRtysq64S/5.jpg",
+            "ipfsuri": "https://bronze-traditional-sailfish-85.mypinata.cloud/ipfs/QmVLcVKRvvDbp5UeDg7G1SShFBKbSyyDdkjR3PajPgvZxa/5.json"
         }
     ]
 
