@@ -23,7 +23,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #67deeb;
+  background-color: #5C7CDC;
 }
 
 nav .title {
@@ -61,7 +61,7 @@ nav ul li a {
 .btn-primary {
   background-color: #f9f871 !important;
   border-color: white !important;
-  color: #985d93 !important;
+  color: #5C7CDC !important;
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -133,7 +133,7 @@ body {
   gap: 5px;
   grid-template-columns: repeat(25, 1fr);
 
-  background: var(--clr-light-blue);
+  background: #5C7CDC;
   border: 0px;
   border-radius: 6px;
 
@@ -156,7 +156,7 @@ body {
   grid-row: 1;
   margin: 0.5rem;
   padding: 0.5rem;
-  color: black;
+  color: white;
   font-weight: 500;
 }
 
@@ -167,7 +167,7 @@ body {
   width: 35px;
   height: 35px;
 
-  background: var(--clr-dark-blue);
+  background: #F9F871;
   border: 0px;
   border-radius: 6px;
 
@@ -177,12 +177,8 @@ body {
 }
 
 .occasion__close:hover {
-  background: var(--clr-grey);
-}
-
-.occasion__close img {
-  width: 25px;
-  height: 25px;
+  background: #FF7CB1;
+  color: white;
 }
 
 .occasion__stage,
@@ -192,8 +188,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: var(--clr-grey);
-  color: var(--clr-white);
+  background-color: white;
+  color: black;
 }
 
 .occasion__stage {
@@ -228,8 +224,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: var(--clr-dark-blue);
-  color: black;
+  background-color: #FF7CB1;
+  color: white;
 
   width: 50px;
   height: 50px;
@@ -245,7 +241,7 @@ body {
 }
 
 .occasion__seats:hover {
-  background: #907bb7;
+  background: #C978D4;
   color: white;
 
   font-size: 1em;
@@ -253,17 +249,7 @@ body {
 }
 
 .occasion__seats--taken {
-  background-color: #907bb7;
-}
-
-:root {
-  --clr-white: #ffffff;
-  --clr-black: #000000;
-  --clr-grey: #8499d1;
-  --clr-grey-2: #61ecd9;
-
-  --clr-dark-blue: #f9f871;
-  --clr-light-blue: #67deeb;
+  background-color: #677381;
 }
 
 /* Responsive styles */
@@ -271,14 +257,12 @@ body {
   /* Adjust styles for tablets and desktops */
   .container {
     width: 80%; /* Adjust container width */
-    
   }
   .card-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     height: auto;
-    padding: 60px;
+    padding: 40px;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -286,7 +270,6 @@ body {
   .container {
     width: 70%; /* Adjust container width */
   }
- 
 }
 
 /* Styles for mobile devices */
@@ -317,3 +300,32 @@ body {
   margin: 50px;
 }
 
+.receipt-container {
+  margin: 20px;
+  display: grid;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.img-responsive {
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+}
+
+.j {
+  padding: 10px;
+}
+
+.disclaimer {
+  /* Styles for the disclaimer */
+  font-size: 0.8rem;
+  color: #aaa;
+  padding-top: 100px;
+  align-items: center;
+  text-align: center;
+}
+
+h5 {
+  padding-top: 1rem;
+}

@@ -49,7 +49,6 @@ contract Ticketlemon is ERC721URIStorage {
         string memory _location,
         string memory _image,
         string memory _ipfsURI
-        
     ) public onlyOwner {
         totalOccasions++;
         occasions[totalOccasions] = Occasion(
@@ -63,7 +62,6 @@ contract Ticketlemon is ERC721URIStorage {
             _location,
             _image,
             _ipfsURI
-            
         );
     }
 
@@ -97,6 +95,10 @@ contract Ticketlemon is ERC721URIStorage {
 
     function getSeatsTaken(uint256 _id) public view returns (uint256[] memory) {
         return seatsTaken[_id];
+    }
+
+    function getTotalSupply() public view returns (uint256) {
+        return totalSupply;
     }
 
     function withdraw() public onlyOwner {

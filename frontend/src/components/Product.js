@@ -3,18 +3,11 @@ import Button from 'react-bootstrap/Button';
 import { Container, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+const Product = ({ occasion, setOccasion }) => {
 
-
-const Product = ({ occasion, toggle, setToggle, setOccasion }) => {
-  
   const buyHandler = async () => {
     setOccasion(occasion);
   }
-
-  // const togglePop = () => {
-  //   setOccasion(occasion);
-  //   setToggle(!toggle);
-  // };
 
   return (
     <Container>
@@ -37,9 +30,6 @@ const Product = ({ occasion, toggle, setToggle, setOccasion }) => {
             ETH
           </Card.Text>
         </Card.Body>
-        {/* <Button onClick={() => null} disabled={occasion.tickets.toString() === "0"}>
-          {occasion.tickets.toString() === "0" ? "Sold Out" : "View Seats"}
-        </Button> */}
         {occasion.tickets.toString() === '0' ? (
           <p className="text-danger">Sold Out</p>
         ) : (

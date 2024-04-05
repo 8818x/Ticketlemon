@@ -12,9 +12,9 @@ const ProductScreen = () => {
   const [account, setAccount] = useState(null);
   const [lemon, setLemon] = useState(null);
   const [occasions, setOccasions] = useState([]);
+  const [filteredOccasion, setFilteredOccasion] = useState(null);
   const [toggle, setToggle] = useState(false);
   const { occasionId } = useParams();
-  const [filteredOccasion, setFilteredOccasion] = useState(null);
 
   useEffect(() => {
     const filtered = occasions.find(ocs => ocs.id.toString() === occasionId);
@@ -22,41 +22,49 @@ const ProductScreen = () => {
   }, [occasions, occasionId]);
 
   const loadBlockchainData = async () => {
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      setProvider(provider);
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    setProvider(provider);
+      const network = await provider.getNetwork();
+      const lemon = new ethers.Contract(config[network.chainId].Ticketlemon.address, Ticketlemon, provider);
+      setLemon(lemon);
 
-    const network = await provider.getNetwork();
-    const lemon = new ethers.Contract(config[network.chainId].Ticketlemon.address, Ticketlemon, provider);
-    setLemon(lemon);
+      const totalOccasions = await lemon.totalOccasions();
+      const occasions = [];
 
-    const totalOccasions = await lemon.totalOccasions();
-    const occasions = [];
+      for (let i = 1; i <= totalOccasions; i++) {
+        const occasion = await lemon.getOccasion(i);
+        occasions.push(occasion);
+      }
 
-    for (let i = 1; i <= totalOccasions; i++) {
-      const occasion = await lemon.getOccasion(i);
-      occasions.push(occasion);
-    }
+      setOccasions(occasions);
 
-    setOccasions(occasions);
+      window.ethereum.on('accountsChanged', async () => {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const account = ethers.utils.getAddress(accounts[0]);
+        setAccount(account);
+      });
 
-    window.ethereum.on('accountsChanged', async () => {
+      // Fetch initial account data
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
       const account = ethers.utils.getAddress(accounts[0]);
       setAccount(account);
-    });
-
-  };
-
+    } catch (error) {
+      console.error('Error loading blockchain data:', error);
+      // Handle error (e.g., show error message to the user)
+    }
+  }
   useEffect(() => {
     loadBlockchainData();
   }, []);
 
+  console.log(account)
   return (
     <div>
-      {/* <Helmet>
-          <title>{filteredOccasion.name}</title>
-        </Helmet> */}
+      <Helmet>
+        <title>{filteredOccasion && filteredOccasion.name}</title>
+      </Helmet>
       <div>
         {filteredOccasion && <SelectedProduct id={occasionId} occasion={filteredOccasion}
           lemon={lemon} provider={provider} account={account} toggle={toggle}
@@ -67,6 +75,8 @@ const ProductScreen = () => {
       <div>
         {toggle && (
           <SeatChart
+            account={account}
+            setAccount={setAccount}
             occasion={filteredOccasion}
             lemon={lemon}
             provider={provider}

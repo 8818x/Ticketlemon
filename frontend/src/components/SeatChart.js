@@ -1,26 +1,70 @@
 import { useEffect, useState } from 'react'
-
+import { useNavigate } from 'react-router-dom'
 import Seat from './Seat'
+import axios from 'axios';
+import { ethers } from 'ethers';
 
-import close from '../assets/close.svg'
-
-const SeatChart = ({ occasion, lemon, provider, setToggle }) => {
+const SeatChart = ({ occasion, lemon, provider, setToggle, account, setAccount}) => {
+  
   const [seatsTaken, setSeatsTaken] = useState(false)
   const [hasSold, setHasSold] = useState(false)
+  const navigate = useNavigate();
 
   const getSeatsTaken = async () => {
     const seatsTaken = await lemon.getSeatsTaken(occasion.id)
     setSeatsTaken(seatsTaken)
   }
 
+  function convert(bignum) {
+    const largeNumber = ethers.BigNumber.from(bignum);
+    const largeNumberAsNumber = largeNumber.toNumber();
+    return largeNumberAsNumber;
+  }
+
+  function hex(num) {
+    const hexValue = num;
+    const weiNumber = parseInt(hexValue, 16);
+    const ethnum = parseFloat(weiNumber) / 1e18;
+    return ethnum
+  }
+
   const buyHandler = async (_seat) => {
     setHasSold(false)
+    try {
 
-    const signer = await provider.getSigner()
-    const transaction = await lemon.connect(signer).mint(occasion.id, _seat, { value: occasion.cost })
-    await transaction.wait()
+      const signer = await provider.getSigner()
+      const transaction = await lemon.connect(signer).mint(occasion.id, _seat, { value: occasion.cost })
+      await transaction.wait()
 
-    setHasSold(true)
+      const tokenId = await lemon.connect(signer).getTotalSupply();
+      setHasSold(true)
+
+      const data = {
+        description: {
+          account: account,
+          tkid: convert(tokenId),
+          ocid: convert(occasion.id._hex),
+          name: occasion.name,
+          seat: _seat,
+          cost: hex(occasion.cost._hex),
+          date: occasion.date,
+          time: occasion.time,
+          location: occasion.location,
+          image: occasion.image
+        }
+      };
+
+      // POST data to MongoDB
+      const response = await axios.post('http://localhost:5000/api/purchases', data);
+      // console.log(response.data._id)
+
+      navigate(`/receipt/${response.data._id}`);
+
+    } catch (error) {
+      console.error('Error minting:', error);
+      window.alert('Minting failted. Please try again.')
+    }
+
   }
 
   useEffect(() => {
@@ -33,7 +77,7 @@ const SeatChart = ({ occasion, lemon, provider, setToggle }) => {
         <h1>{occasion.name}</h1>
 
         <button onClick={() => setToggle(false)} className="occasion__close">
-          <img src={close} alt="Close" />
+          <i class="fa fa-times" aria-hidden="true"></i>
         </button>
 
         <div className="occasion__stage">

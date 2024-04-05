@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import Product from '../components/Product'
 import Ticketlemon from '../abis/Ticketlemon.json'
 import config from '../config.json'
-
+import Slideshow from '../components/Slideshow'
 
 function HomeScreen() {
     const [provider, setProvider] = useState(null)
@@ -12,7 +12,6 @@ function HomeScreen() {
     const [lemon, setLemon] = useState(null)
     const [occasions, setOccasions] = useState([])
     const [occasion, setOccasion] = useState({})
-    const [toggle, setToggle] = useState(false)
 
     const loadBlockchainData = async () => {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -36,7 +35,6 @@ function HomeScreen() {
             const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
             const account = ethers.utils.getAddress(accounts[0])
             setAccount(account)
-
         })
     }
 
@@ -49,6 +47,7 @@ function HomeScreen() {
             <Helmet>
                 <title>Ticketlemon</title>
             </Helmet>
+                {/* <Slideshow occasions={occasions}/> */}
             <div className='card-container'>
                 {occasions.map((occasion, index) => (
                     <Product

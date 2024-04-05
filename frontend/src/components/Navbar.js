@@ -4,14 +4,12 @@ import { ethers } from 'ethers'
 import Button from 'react-bootstrap/Button'
 import SearchBox from "./SearchBox"
 
-const Navbar = ({ account, setAccount }) => {
-
+const Navbar = ({account, setAccount}) => {
     const connectHandler = async () => {
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
         const account = ethers.utils.getAddress(accounts[0])
         setAccount(account)
     }
-
     return (
         <div>
             <nav>
