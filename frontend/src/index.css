@@ -329,3 +329,8 @@ body {
 h5 {
   padding-top: 1rem;
 }
+
+.nav-text {
+  color: white;
+  text-decoration: none;
+}

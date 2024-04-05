@@ -5,7 +5,7 @@ import Home from './screens/HomeScreen.js'
 import ProductScreen from './screens/ProductScreen.js'
 import ReceiptScreen from './screens/ReceiptScreen.js'
 import { HelmetProvider } from 'react-helmet-async'
-import SeatChart from './components/SeatChart.js'
+import ListScreen from './screens/ListScreen.js'
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/product/:occasionId' element={<ProductScreen />} />
           <Route path='/receipt/:receiptId' element={<ReceiptScreen />} />
+          <Route path="/purchases/account/:account" element={<ListScreen/>} />
         </Routes>
       </HelmetProvider>
     </BrowserRouter>

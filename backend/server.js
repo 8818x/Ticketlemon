@@ -85,6 +85,18 @@ app.get('/api/purchases/:id', async (req, res) => {
     }
 });
 
+
+app.get('/api/purchases/account/:account', async (req, res) => {
+    const { account } = req.params;
+    try {
+        const purchases = await Purchase.find({ 'description.account': account });
+        res.json(purchases);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

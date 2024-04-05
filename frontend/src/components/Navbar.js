@@ -4,12 +4,14 @@ import { ethers } from 'ethers'
 import Button from 'react-bootstrap/Button'
 import SearchBox from "./SearchBox"
 
-const Navbar = ({account, setAccount}) => {
+
+const Navbar = ({ account, setAccount }) => {
     const connectHandler = async () => {
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
         const account = ethers.utils.getAddress(accounts[0])
         setAccount(account)
     }
+
     return (
         <div>
             <nav>
@@ -18,6 +20,7 @@ const Navbar = ({account, setAccount}) => {
                     Ticketlemon
                 </Link>
                 <SearchBox />
+                <Link to={`/purchases/account/${account}`} className="nav-text">My Tickets</Link>
                 {account ? (
                     <Button variant="outline-light" className="btn-margin">
                         {account.slice(0, 6) + "..." + account.slice(38, 42)}

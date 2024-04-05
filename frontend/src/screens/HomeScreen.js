@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet-async'
 import Product from '../components/Product'
 import Ticketlemon from '../abis/Ticketlemon.json'
 import config from '../config.json'
-import Slideshow from '../components/Slideshow'
 
 function HomeScreen() {
     const [provider, setProvider] = useState(null)
@@ -47,7 +46,6 @@ function HomeScreen() {
             <Helmet>
                 <title>Ticketlemon</title>
             </Helmet>
-                {/* <Slideshow occasions={occasions}/> */}
             <div className='card-container'>
                 {occasions.map((occasion, index) => (
                     <Product
