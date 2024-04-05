@@ -1,20 +1,16 @@
 import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
-
-import Product from '../components/Product'
-
-import Ticketlemon from '../abis/Ticketlemon.json'
-import SeatChart from '../components/SeatChart'
-import config from '../config.json'
 import { Helmet } from 'react-helmet-async'
+import Product from '../components/Product'
+import Ticketlemon from '../abis/Ticketlemon.json'
+import config from '../config.json'
+
 
 function HomeScreen() {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
-
     const [lemon, setLemon] = useState(null)
     const [occasions, setOccasions] = useState([])
-
     const [occasion, setOccasion] = useState({})
     const [toggle, setToggle] = useState(false)
 

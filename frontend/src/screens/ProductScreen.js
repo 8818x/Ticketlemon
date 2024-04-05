@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ethers } from 'ethers';
+import { Helmet } from 'react-helmet-async'
 import Ticketlemon from '../abis/Ticketlemon.json';
 import config from '../config.json';
 import SelectedProduct from '../components/SelectedProduct';
@@ -11,11 +12,10 @@ const ProductScreen = () => {
   const [account, setAccount] = useState(null);
   const [lemon, setLemon] = useState(null);
   const [occasions, setOccasions] = useState([]);
-  const [occasion, setOccasion] = useState(null);
   const [toggle, setToggle] = useState(false);
   const { occasionId } = useParams();
-  
   const [filteredOccasion, setFilteredOccasion] = useState(null);
+
   useEffect(() => {
     const filtered = occasions.find(ocs => ocs.id.toString() === occasionId);
     setFilteredOccasion(filtered);
@@ -52,16 +52,18 @@ const ProductScreen = () => {
     loadBlockchainData();
   }, []);
 
-
   return (
-
     <div>
+      {/* <Helmet>
+          <title>{filteredOccasion.name}</title>
+        </Helmet> */}
       <div>
-        {filteredOccasion && <SelectedProduct id = {occasionId} occasion={filteredOccasion}  
-        lemon = {lemon} provider = {provider} account = {account} toggle={toggle}
-        setOccasion={setFilteredOccasion} 
-        setToggle={setToggle}/>}
+        {filteredOccasion && <SelectedProduct id={occasionId} occasion={filteredOccasion}
+          lemon={lemon} provider={provider} account={account} toggle={toggle}
+          setOccasion={setFilteredOccasion}
+          setToggle={setToggle} />}
       </div>
+
       <div>
         {toggle && (
           <SeatChart

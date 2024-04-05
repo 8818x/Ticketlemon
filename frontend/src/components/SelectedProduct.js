@@ -1,6 +1,7 @@
 import { ethers } from 'ethers';
 import Button from 'react-bootstrap/Button';
 import { Container, Row, Col } from 'react-bootstrap';
+
 const SelectedProduct = ({ occasion, toggle, setToggle, setOccasion }) => {
 
   const togglePop = () => {
