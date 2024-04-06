@@ -1,33 +1,93 @@
 # Ticketlemon
 
-## Technology Stack & Tools
+Ticketlemon is a decentralized application (DApp) built on the Ethereum blockchain for managing and selling event tickets as non-fungible tokens (NFTs). With Ticketlemon, event organizers can easily create, list, and sell tickets for their occasions while ensuring transparency, security, and immutability through blockchain technology.
 
-- Solidity (Writing Smart Contracts & Tests)
-- Javascript (React & Testing)
-- [Hardhat](https://hardhat.org/) (Development Framework)
-- [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
-- [React.js](https://reactjs.org/) (Frontend Framework)
-- [MetaMask](https://metamask.io/)
+## Table of Contents
+- [Ticketlemon](#ticketlemon)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+  - [Running Tests](#running-tests)
+  - [Deployment](#deployment)
+  - [Usage](#usage)
+    - [Frontend](#frontend)
+    - [Backend](#backend)
+  - [Generate](#generate)
+  - [Reference](#reference)
 
-## Requirements For Initial Setup
-- Install [NodeJS](https://nodejs.org/en/). Recommended to use the LTS version.
-- Install [MetaMask](https://metamask.io/) on your browser.
+## Getting Started
 
-## Setting Up
-### 1. Clone/Download the Repository
+To get started with Ticketlemon, follow these steps:
 
-### 2. Install Dependencies:
-`$ npm install`
+1. Clone the repository:
+```bash
+git clone https://github.com/8818x/Ticketlemon
+```
 
-### 3. Run tests
-`$ npx hardhat test`
+2. Navigate to the frontend directory and install dependencies:
+```bash
+cd frontend
+npm install
+```
 
-### 4. Start Hardhat node
-`$ npx hardhat node`
+3. Navigate to the backend directory and install dependencies:
+```bash
+cd backend
+npm install
+```
 
-### 5. Run deployment script
-In a separate terminal execute:
-`$ npx hardhat run ./scripts/deploy.js --network localhost`
+## Running Tests
 
-### 6. Start frontend
-`$ npm run start`
+To run tests, execute the following command:
+```bash
+npx hardhat test
+```
+
+
+## Deployment
+
+To deploy the smart contract, follow these steps:
+
+1. Start the Hardhat node:
+```bash
+npx hardhat node
+```
+
+2. In a separate terminal, execute the deployment script:
+```bash
+npx hardhat run ./scripts/deploy.js --network localhost
+```
+
+## Usage
+
+Once the smart contract is deployed, you can interact with it using web interfaces provided in the frontend and backend.
+
+### Frontend
+
+To start the frontend server, execute the following command:
+```bash
+cd frontend
+npm run start
+```
+
+Access the frontend application in your web browser at the specified URL.
+
+### Backend
+
+To start the backend server, execute the following command:
+```bash
+cd backend
+node server.js
+```
+
+The backend server should now be running, providing necessary APIs to interact with the smart contract.
+
+## Generate
+
+Generate description by ChatGPT.
+
+## Reference
+
+The project that reference from this reposity
+```bash
+https://github.com/dappuniversity/tokenmaster/
+```

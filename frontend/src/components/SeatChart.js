@@ -77,7 +77,7 @@ const SeatChart = ({ occasion, lemon, provider, setToggle, account, setAccount})
         <h1>{occasion.name}</h1>
 
         <button onClick={() => setToggle(false)} className="occasion__close">
-          <i class="fa fa-times" aria-hidden="true"></i>
+          <i className="fa fa-times" aria-hidden="true"></i>
         </button>
 
         <div className="occasion__stage">
