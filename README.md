@@ -87,7 +87,7 @@ Generate description by ChatGPT.
 
 ## Reference
 
-The project that reference from this reposity
+This project is based on this repository:
 ```bash
 https://github.com/dappuniversity/tokenmaster/
 ```
